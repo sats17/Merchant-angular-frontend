@@ -1,0 +1,21 @@
+<a routerLink = 'merchantOperations'> Products </a>
+<a routerLink = 'merchantProfile'> Profile </a>
+<table border="2" cellspacing="5px">
+    <tr>
+        <th>Order ID</th>
+        <th>Discount Total</th>
+        <th>Quantity</th>
+        <th>Totoal Amount</th>
+        <th>Product Name</th>
+        <th>Product ID</th>
+    </tr>
+    <tr *ngFor ="let loopData of Orders" >
+        <td>{{loopData.orderId}}</td>
+        <td>{{loopData.discountTotal}}</td>
+        <td>{{loopData.quantity}}</td>
+        <td>{{loopData.totalAmount}}</td>
+        <td>{{loopData.productName}}</td>
+        <td>{{loopData.productId}}</td>
+    </tr>
+</table>
+
