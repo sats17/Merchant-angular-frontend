@@ -1,0 +1,55 @@
+<h2>Add Product</h2>
+<form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="productName">Product Name</label>
+        <input type="text" formControlName="productName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.productName.errors }" />
+        <div *ngIf="submitted && f.productName.errors" class="invalid-feedback">
+            <div *ngIf="f.productName.errors.required">Prodcut Name is required</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="productDescription">Product Description</label>
+        <input type="text" formControlName="productDescription" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.productDescription.errors }" />
+        <div *ngIf="submitted && f.productDescription.errors" class="invalid-feedback">
+            <div *ngIf="f.productDescription.errors.required">Product Description is required</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="productPrice">Product Price</label>
+        <input type="text" formControlName="productPrice" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.productPrice.errors }" />
+        <div *ngIf="submitted && f.productPrice.errors" class="invalid-feedback">
+            <div *ngIf="f.productPrice.errors.required">Product Price is required</div>
+            <div *ngIf="f.productPrice.errors.pattern">Invalid Product Price</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="productDiscount">Product Price</label>
+        <input type="text" formControlName="productDiscount" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.productDiscount.errors }" />
+        <div *ngIf="submitted && f.productDiscount.errors" class="invalid-feedback">
+            <div *ngIf="f.productDiscount.errors.required">Product discount is required</div>
+            <div *ngIf="f.productDiscount.errors.pattern">Invalid Product discount</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="gender">Select  Gender</label><br>
+        <input type="radio" value="male" name = "gender" /> Male
+        <input type="radio" value = "female" name = "gender"> Female
+    </div>
+
+    <div class="form-group">
+    <label for="gender">Select Category</label><br>
+    <select formControlName="categories">
+            <option *ngFor="let c of categories" [ngValue]="c">{{ c }}</option>
+        </select>
+    </div>    
+
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Add Product</button>
+        <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        <a routerLink="/signup" class="btn btn-link">Sign Up</a>
+    </div>
+</form> 

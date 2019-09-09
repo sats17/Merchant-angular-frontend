@@ -10,6 +10,7 @@ export class MerchantProfileComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
