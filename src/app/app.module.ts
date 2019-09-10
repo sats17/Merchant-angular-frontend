@@ -9,6 +9,8 @@ import { MerchantProfileComponent } from './merchant/merchant-profile/merchant-p
 import { AddProductComponent } from './merchant/merchant-operations/add-product/add-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MerchantServiceService } from './services/merchant-service.service';
+import { RemoveProductComponent } from './merchant/merchant-operations/remove-product/remove-product.component';
+import { ShowAllProductsComponent } from './merchant/merchant-operations/show-all-products/show-all-products.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { MerchantServiceService } from './services/merchant-service.service';
     MerchantComponent,
     MerchantOperationsComponent,
     MerchantProfileComponent,
-    AddProductComponent
+    AddProductComponent,
+    RemoveProductComponent,
+    ShowAllProductsComponent
   ],
   imports: [
     BrowserModule,
